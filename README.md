@@ -1,18 +1,15 @@
-# FreeMatch - Self-adaptive Thresholding for Semi-supervised Learning
+# BoostIS 
 
-This repository contains the unofficial implementation of the paper **FreeMatch: Self-adaptive Thresholding for Semi-supervised Learning.** This was the part of the Paper Reproducibility Challenge project in my course of *EECS6322: Neural Networks and Deep Learning* course. The original paper can be found from this [link](https://arxiv.org/pdf/2205.07246.pdf).
-
-The official paper published their results on five datasets viz. CIFAR10, CIFAR100, SVHN, STL10, and ImageNet datasets. But, due to GPU constraints, I was able to run the scripts for only CIFAR10 dataset with different number of labeled data examples on one Tesla T4 on Google Cloud. The installation of libraries and running the scripts is explained in the later sections. The logs and the checkpoint of the experiments on CIFAR10 dataset can be obtained [here](https://drive.google.com/drive/folders/1_Hip4LOGPju_KOqL4FBJk2WCVkzf7TWu?usp=share_link)
 
 ## Disclaimer
 
-All the theorems, propositions, and the proof are taken from the paper by Wang et.al. I have just reproduced the paper to show the main experiments and the results following the propositions of their work in Semi-Supervised Learning. I would like to thank the authors for their outstanding work on a new approach to semi-supervised learning and detailed analysis of the working of the same. To get into the details of all the loss functions and their proofs, read the original paper.
+
 
 ## Running the Experiments
 
 ### Setup
 
-1. `git clone https://github.com/shreejalt/freematch-pytorch`
+1. `git clone https://github.com/cpf0326/BoostIS_V3-pytorch-main.git`
 2. `cd freematch-pytorch && install_anaconda.sh`
 3. `conda env create -f environment.yml`
 
@@ -76,8 +73,8 @@ The official repository can be found from this [link](https://github.com/microso
 
 | Method             | Num Labeled: 10 | Num Labeled: 40 | Num Labeled: 250 | Num Labeled: 4000 |
 | ------------------ | --------------- | --------------- | ---------------- | ----------------- |
-| FreeMatch          | 92.93±4.28      | 95.10±0.04      | 95.12±0.18       | 95.9±0.02         |
-| Reproduced Results | 93.00           | 94.13           | 95.02            | 95.1              |
+| FreeMatch          |       |       |        |          |
+| Reproduced Results |            |            |             |               |
 
 Once the testing is over, all the results will be stored in `LOG_DIR/RUN_NAME` folder present in the `config` file. Below given are some of the results on the CIFAR10 (10) dataset with the checkpoint report given in blocks.
 
@@ -89,27 +86,7 @@ Once the testing is over, all the results will be stored in `LOG_DIR/RUN_NAME` f
 
 
 ```
-Run Name: freematch_cifar10_10 | Dataset: cifar10 | Network Name: wrn_28_2 | Num labeled: 10 
 
-{'loss': 0.30913862426280975, 'accuracy': 0.932, 'precision': 0.9314379217610952, 'recall': 0.932, 'f1': 0.9314966279848587, 'auc': 0.9957382944444444}
-** Classification Report **
-
-              precision    recall  f1-score   support
-
-           0       0.94      0.94      0.94      1000
-           1       0.97      0.98      0.97      1000
-           2       0.93      0.90      0.91      1000
-           3       0.87      0.82      0.84      1000
-           4       0.93      0.96      0.94      1000
-           5       0.87      0.86      0.87      1000
-           6       0.93      0.97      0.95      1000
-           7       0.97      0.96      0.96      1000
-           8       0.95      0.97      0.96      1000
-           9       0.96      0.97      0.97      1000
-
-    accuracy                           0.93     10000
-   macro avg       0.93      0.93      0.93     10000
-weighted avg       0.93      0.93      0.93     10000
 
 ** Confusion Matrix **
 
